@@ -160,13 +160,19 @@ body:not(.lang-zh) .brand-tag {
 
 @media (max-width: 720px) {
   .header-inner {
-    gap: 0.5rem;
-    padding-block: 0.35rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1.1rem;
+    padding-block: 0.4rem;
   }
 
   .brand {
-    flex: 1 1 auto;
+    flex: none;
+    width: auto;
+    max-width: 100%;
     min-width: 0;
+    overflow: hidden;
   }
 
   .brand-text {
@@ -174,14 +180,16 @@ body:not(.lang-zh) .brand-tag {
   }
 
   .brand-logo {
-    height: 34px;
-    max-width: min(148px, 48vw);
+    height: 32px;
+    width: auto;
+    max-width: 112px;
   }
 
   .header-actions {
-    flex: 0 0 auto;
-    gap: 0.4rem;
-    margin-left: auto;
+    flex: none;
+    justify-self: end;
+    gap: 0.55rem;
+    margin-left: 0;
   }
 
   .lang-switch {
@@ -197,6 +205,22 @@ body:not(.lang-zh) .brand-tag {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-inner {
+    column-gap: 0.85rem;
+  }
+
+  .brand-logo {
+    max-width: 96px;
+    height: 30px;
+  }
+
+  .lang-btn {
+    padding: 0.28rem 0.45rem;
+    font-size: 0.7rem;
   }
 }
 
